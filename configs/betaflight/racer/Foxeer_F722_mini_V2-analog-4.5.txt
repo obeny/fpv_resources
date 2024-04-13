@@ -1,8 +1,8 @@
 dump
 
 # version
-# Betaflight / STM32F7X2 (S7X2) 4.5.99.OBENY Nov 17 2023 / 11:08:39 (61fefee7b) MSP API: 1.46
-# config rev: 7bcbecf
+# Betaflight / STM32F7X2 (S7X2) 4.5.99.OBENY Apr 13 2024 / 00:16:51 (9d252eb31) MSP API: 1.46
+# config rev: 3d30aee
 
 # start the command batch
 batch start
@@ -33,7 +33,6 @@ resource SERIAL_TX 7 NONE
 resource SERIAL_TX 8 NONE
 resource SERIAL_TX 9 NONE
 resource SERIAL_TX 10 NONE
-resource SERIAL_TX 11 NONE
 resource SERIAL_RX 1 B07
 resource SERIAL_RX 2 A03
 resource SERIAL_RX 3 B11
@@ -44,7 +43,6 @@ resource SERIAL_RX 7 NONE
 resource SERIAL_RX 8 NONE
 resource SERIAL_RX 9 NONE
 resource SERIAL_RX 10 NONE
-resource SERIAL_RX 11 NONE
 resource SOFTSERIAL_TX 1 NONE
 resource SOFTSERIAL_TX 2 NONE
 resource SOFTSERIAL_RX 1 NONE
@@ -78,9 +76,6 @@ resource ADC_BATT 1 C00
 resource ADC_RSSI 1 A00
 resource ADC_CURR 1 C02
 resource ADC_EXT 1 NONE
-resource BARO_CS 1 NONE
-resource BARO_EOC 1 NONE
-resource BARO_XCLR 1 NONE
 resource PINIO 1 NONE
 resource PINIO 2 NONE
 resource PINIO 3 NONE
@@ -497,11 +492,6 @@ set acc_lpf_hz = 10
 set acc_trim_pitch = 0
 set acc_trim_roll = 0
 set acc_calibration = 105,-97,422,1
-set baro_bustype = NONE
-set baro_spi_device = 0
-set baro_i2c_device = 0
-set baro_i2c_address = 0
-set baro_hardware = NONE
 set mid_rc = 1500
 set min_check = 1010
 set max_check = 1990
@@ -529,6 +519,7 @@ set rx_min_usec = 950
 set rx_max_usec = 2050
 set serialrx_halfduplex = OFF
 set msp_override_channels_mask = 0
+set msp_override_failsafe = OFF
 set adc_device = 3
 set adc_vrefint_calibration = 0
 set adc_tempsensor_calibration30 = 0
@@ -539,7 +530,6 @@ set blackbox_disable_pids = OFF
 set blackbox_disable_rc = OFF
 set blackbox_disable_setpoint = OFF
 set blackbox_disable_bat = OFF
-set blackbox_disable_alt = ON
 set blackbox_disable_rssi = ON
 set blackbox_disable_gyro = OFF
 set blackbox_disable_gyrounfilt = OFF
@@ -743,7 +733,6 @@ set osd_disarmed_pos = 2346
 set osd_nheading_pos = 234
 set osd_up_down_reference_pos = 205
 set osd_ready_mode_pos = 234
-set osd_nvario_pos = 234
 set osd_esc_tmp_pos = 234
 set osd_esc_rpm_pos = 234
 set osd_esc_rpm_freq_pos = 234
@@ -779,7 +768,7 @@ set osd_profile = 1
 set osd_profile_1_name = -
 set osd_profile_2_name = -
 set osd_profile_3_name = -
-set osd_gps_sats_show_hdop = OFF
+set osd_gps_sats_show_pdop = OFF
 set osd_displayport_device = AUTO
 set osd_rcchannels = -1,-1,-1,-1
 set osd_camera_frame_width = 24
@@ -865,6 +854,7 @@ set i2c3_clockspeed_khz = 800
 set mco2_on_pc9 = OFF
 set scheduler_relax_rx = 25
 set scheduler_relax_osd = 25
+set cpu_late_limit_permille = 10
 set serialmsp_halfduplex = OFF
 set timezone_offset_minutes = 0
 set rpm_filter_harmonics = 2
@@ -999,6 +989,12 @@ set simplified_dterm_filter_multiplier = 115
 set tpa_mode = D
 set tpa_rate = 70
 set tpa_breakpoint = 1250
+set tpa_low_rate = 20
+set tpa_low_breakpoint = 1050
+set tpa_low_always = OFF
+set ez_landing_threshold = 25
+set ez_landing_limit = 15
+set ez_landing_speed = 50
 
 rateprofile 0
 

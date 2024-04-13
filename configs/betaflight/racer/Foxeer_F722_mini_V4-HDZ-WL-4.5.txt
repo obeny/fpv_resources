@@ -1,8 +1,8 @@
 dump
 
 # version
-# Betaflight / STM32F7X2 (S7X2) 4.5.99.OBENY Nov 17 2023 / 11:08:36 (61fefee7b) MSP API: 1.46
-# config rev: 7bcbecf
+# Betaflight / STM32F7X2 (S7X2) 4.5.99.OBENY Apr 13 2024 / 00:16:47 (9d252eb31) MSP API: 1.46
+# config rev: 3d30aee
 
 # start the command batch
 batch start
@@ -33,7 +33,6 @@ resource SERIAL_TX 7 NONE
 resource SERIAL_TX 8 NONE
 resource SERIAL_TX 9 NONE
 resource SERIAL_TX 10 NONE
-resource SERIAL_TX 11 NONE
 resource SERIAL_RX 1 B07
 resource SERIAL_RX 2 A03
 resource SERIAL_RX 3 B11
@@ -44,7 +43,6 @@ resource SERIAL_RX 7 NONE
 resource SERIAL_RX 8 NONE
 resource SERIAL_RX 9 NONE
 resource SERIAL_RX 10 NONE
-resource SERIAL_RX 11 NONE
 resource SOFTSERIAL_TX 1 NONE
 resource SOFTSERIAL_TX 2 NONE
 resource SOFTSERIAL_RX 1 NONE
@@ -530,6 +528,7 @@ set rx_min_usec = 950
 set rx_max_usec = 2050
 set serialrx_halfduplex = OFF
 set msp_override_channels_mask = 0
+set msp_override_failsafe = OFF
 set adc_device = 3
 set adc_vrefint_calibration = 0
 set adc_tempsensor_calibration30 = 0
@@ -780,7 +779,7 @@ set osd_profile = 1
 set osd_profile_1_name = -
 set osd_profile_2_name = -
 set osd_profile_3_name = -
-set osd_gps_sats_show_hdop = OFF
+set osd_gps_sats_show_pdop = OFF
 set osd_displayport_device = MSP
 set osd_rcchannels = -1,-1,-1,-1
 set osd_camera_frame_width = 24
@@ -866,6 +865,7 @@ set i2c3_clockspeed_khz = 800
 set mco2_on_pc9 = OFF
 set scheduler_relax_rx = 25
 set scheduler_relax_osd = 25
+set cpu_late_limit_permille = 10
 set serialmsp_halfduplex = OFF
 set timezone_offset_minutes = 0
 set rpm_filter_harmonics = 2
@@ -1000,6 +1000,12 @@ set simplified_dterm_filter_multiplier = 115
 set tpa_mode = D
 set tpa_rate = 70
 set tpa_breakpoint = 1250
+set tpa_low_rate = 20
+set tpa_low_breakpoint = 1050
+set tpa_low_always = OFF
+set ez_landing_threshold = 25
+set ez_landing_limit = 15
+set ez_landing_speed = 50
 
 rateprofile 0
 

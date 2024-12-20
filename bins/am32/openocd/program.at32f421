@@ -1,0 +1,4 @@
+source [find interface/stlink.cfg]
+source [find target/at32f421xx.cfg]
+
+source ../openocd/program_ocd

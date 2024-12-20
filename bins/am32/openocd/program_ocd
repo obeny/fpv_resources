@@ -1,6 +1,7 @@
 init
 reset halt
 flash probe 0
+flash erase_sector 0 0 last
 flash write_image erase unlock bootloader.hex
 reset
 shutdown

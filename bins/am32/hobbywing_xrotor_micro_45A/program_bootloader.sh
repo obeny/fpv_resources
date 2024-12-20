@@ -1,1 +1,1 @@
-../openocd/openocd_at32f421.sh -f ../openocd/program.ocd
+openocd -f ../openocd/program.at32f421

@@ -1,7 +1,11 @@
+source [find interface/stlink.cfg]
+source [find target/at32f421xx.cfg]
+
 init
 reset halt
 flash probe 0
 at32f4xx disable_access_protection 0
 at32f4xx mass_erase 0
+flash erase_sector 0 0 last
 reset
 shutdown

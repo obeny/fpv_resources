@@ -1,2 +1,2 @@
-HappyModel_ES24TX_2400_TX Unified_ESP32_2400_TX
-HappyModel_EP_2400_RX Unified_ESP8285_2400_RX
+Unified_ESP8285_2400_RX -> HappyModel EP1/EP2 2.4GHz RX
+Unified_ESP32_2400_TX -> HappyModel ES24 2.4GHz TX

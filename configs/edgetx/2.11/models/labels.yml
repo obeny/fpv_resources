@@ -1,0 +1,18 @@
+Labels:
+  "Favorites":
+Sort: 1
+Models:
+  model1.yml:
+    hash: "27210000635cc6b0"
+    name: "SIM"
+    labels: "Favorites"
+    bitmap: ""
+    lastopen: 1772927773
+  model2.yml:
+    hash: "dd500000675c22bf"
+    name: "ELRS24"
+    mod1type: 5
+    labels: "Favorites"
+    bitmap: "SL1511.jpg"
+    lastopen: 1772927782
+
